@@ -1,8 +1,6 @@
-## Name
+## Name: SIVAHARIHARAN J
 
-## Register No
-
-## Exp no:
+## Register No: 212224223004
 
 # Automatic Street Light Controller Using LDR
 
@@ -103,13 +101,44 @@ In audio compressors, this property is applicable.
 * Garden lighting
 * Energy-saving lighting systems
 
-## Program
+## Program:
+```
+int ldrPin = A0;
+int ledPin = 9;
+int ldrValue;
+int threshold = 500;
 
-## Circuit Diagram
+void setup()
+{
+  pinMode(ledPin, OUTPUT);
+  Serial.begin(9600);
+}
 
-## Output
+void loop()
+{
+  ldrValue = analogRead(ldrPin);
 
-## Result
+  if (ldrValue < threshold)
+  {
+    digitalWrite(ledPin, HIGH);
+  }
+  else
+  {
+    digitalWrite(ledPin, LOW);
+  }
 
-The automatic street light controller using an LDR sensor was successfully designed and implemented in hardware. 
-The street light automatically turns **ON during darkness** and **OFF when sufficient light is available**.
+  delay(500);
+}
+```
+
+## Circuit Diagram:
+<img width="1483" height="1061" alt="image" src="https://github.com/user-attachments/assets/53e41ec4-6386-474d-bff9-cd3cbebb72ce" />
+
+
+## Output:
+<img width="1492" height="1054" alt="image" src="https://github.com/user-attachments/assets/614c9c22-1ede-49d5-88ee-13a0e98a0948" />
+
+
+
+## Result: The Automatic Street Light Controller using LDR sensor was successfully designed and simulated in Proteus. The LED automatically turns ON when the surrounding light intensity decreases (darkness) and turns OFF when sufficient light is available.
+
